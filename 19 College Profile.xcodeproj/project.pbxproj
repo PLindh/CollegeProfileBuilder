@@ -15,6 +15,7 @@
 		3F3DFEC01E424AFC009EEAFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3DFEBE1E424AFC009EEAFE /* LaunchScreen.storyboard */; };
 		3F3DFECB1E424AFD009EEAFE /* _9_College_ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DFECA1E424AFD009EEAFE /* _9_College_ProfileTests.swift */; };
 		3F3DFED61E424AFD009EEAFE /* _9_College_ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DFED51E424AFD009EEAFE /* _9_College_ProfileUITests.swift */; };
+		3F3DFEE41E424D47009EEAFE /* Colleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DFEE31E424D46009EEAFE /* Colleges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3F3DFED11E424AFD009EEAFE /* 19 College ProfileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "19 College ProfileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3DFED51E424AFD009EEAFE /* _9_College_ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _9_College_ProfileUITests.swift; sourceTree = "<group>"; };
 		3F3DFED71E424AFD009EEAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3DFEE31E424D46009EEAFE /* Colleges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colleges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,10 @@
 		3F3DFEB21E424AFC009EEAFE /* 19 College Profile */ = {
 			isa = PBXGroup;
 			children = (
-				3F3DFEB31E424AFC009EEAFE /* AppDelegate.swift */,
+				3F3DFEE31E424D46009EEAFE /* Colleges.swift */,
 				3F3DFEB51E424AFC009EEAFE /* MasterViewController.swift */,
 				3F3DFEB71E424AFC009EEAFE /* DetailViewController.swift */,
+				3F3DFEB31E424AFC009EEAFE /* AppDelegate.swift */,
 				3F3DFEB91E424AFC009EEAFE /* Main.storyboard */,
 				3F3DFEBC1E424AFC009EEAFE /* Assets.xcassets */,
 				3F3DFEBE1E424AFC009EEAFE /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				3F3DFEB81E424AFC009EEAFE /* DetailViewController.swift in Sources */,
 				3F3DFEB61E424AFC009EEAFE /* MasterViewController.swift in Sources */,
 				3F3DFEB41E424AFC009EEAFE /* AppDelegate.swift in Sources */,
+				3F3DFEE41E424D47009EEAFE /* Colleges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
