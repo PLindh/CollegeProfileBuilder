@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var locationTextField: UITextField!
     @IBOutlet var numStudentsTextField: UITextField!
     @IBOutlet var imageView: UIImageView!
-    
+    let realm = try! Realm()
     var detailItem: Colleges? {
         didSet {
             // Update the view.
@@ -47,10 +48,12 @@ class DetailViewController: UIViewController {
 
     @IBAction func onSaveButtonTapped(_ sender: UIButton) {
         if let college = self.detailItem {
-            college.name = nameTextField.text!
-            college.location = locationTextField.text!
-            college.numStudents = Int(numStudentsTextField.text!)!
-            college.image = UIImagePNGRepresentation(imageView.image!)!
+            try! realm.write({
+                college.name = nameTextField.text!
+                college.location = locationTextField.text!
+                college.numStudents = Int(numStudentsTextField.text!)!
+                college.image = UIImagePNGRepresentation(imageView.image!)!
+            })
         }
     }
 

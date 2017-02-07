@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    let realm = try! Realm()
+    lazy var colleges: Results<Colleges> = {
+        self.realm.objects(Colleges.self)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,9 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        }
+        for college in colleges {
+            objects.append(college)
         }
     }
 
@@ -66,6 +73,9 @@ class MasterViewController: UITableViewController {
                                        numStudents: numStudents,
                                        image: UIImagePNGRepresentation(image)! )
                 self.objects.append(college)
+                try! self.realm.write {
+                    self.realm.add(college)
+                }
                 self.tableView.reloadData()
             }
         }
@@ -112,7 +122,10 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            let college = objects.remove(at: indexPath.row) as! Colleges
+            try! self.realm.write {
+                self.realm.delete(college)
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
