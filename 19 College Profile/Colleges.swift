@@ -23,5 +23,5 @@ class Colleges: Object {
         self.numStudents = numStudents
         self.image = image
     }
-    
+    //class
 }
